@@ -1,0 +1,989 @@
+/*ППодключение шрифтов*/
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular.woff2') format('woff2'), url('../fonts/Roboto-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Bold.woff2') format('woff2'), url('../fonts/Roboto-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Black.woff2') format('woff2'), url('../fonts/Roboto-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* google */
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto-Black.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto-Bold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: bold;
+}
+
+html, * {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+    box-sizing: border-box;
+    /*Свойства width и height включают в себя значения полей и грани*/
+}
+
+body {
+    font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    /*inherit - наследует от родителя*/
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Правильный способ подключения  box-sizing: border-box; ко всей Вёрстке.Более производительный*/
+
+.wraper {
+    width: 100%;
+}
+
+.container {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+}
+
+.g-btn {
+    padding: 15px 40px;
+    border-radius: 34px;
+    background-color: #3478DF;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    border: none;
+}
+
+.header-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 23px 0;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.header-logo__decr {
+    margin-left: 18px;
+    white-space: nowrap;
+}
+
+/* Свойство white-space устанавливает, как отображать пробелы между словами. */
+
+.header-logo__text {
+    display: block;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #212121;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.header-logo__text--bold {
+    margin-bottom: 10px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 28px;
+    line-height: 33px;
+    color: #212121;
+    display: block;
+}
+
+.header-contact__phone {
+    display: block;
+    font-size: 32px;
+    line-height: 37px;
+    text-align: right;
+    color: #212121;
+}
+
+.header-contact__text {
+    display: block;
+    font-size: 16px;
+    color: #5E6065;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+/* Header top end */
+
+/* Header bottom start */
+
+.header-bottom {
+    background-color: #3E3F44;
+    width: 100%;
+}
+
+.header-nav {
+    width: 100%;
+    color: white;
+}
+
+.header-nav__list {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.header-nav__item {
+    position: relative;
+    margin-right: 20px;
+    transition: all .2s;
+    /* Анимация была плавной при наведении  */
+}
+
+.header-nav__item:hover .header-nav-sub {
+    display: block;
+    /* принаведение на внешнюю сылку  .header-nav__item:hover открывается .header-nav-sub и display:none заменяется block */
+}
+
+.header-nav__item:last-child {
+    margin-right: 0px;
+}
+
+.header-nav__item::after {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 11px;
+    height: 7px;
+    right: 21px;
+    top: 50%;
+    transform: translateY(-50%);
+    /* для правильного выравнивания по верху */
+    background-image: url(../img/svg/arrow.svg);
+    background-size: cover;
+}
+
+.header-nav__item:last-child::after {
+    display: none;
+}
+
+.header-nav__link {
+    padding: 18px 48px 18px 18px;
+    display: block;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 15px;
+}
+
+.header-nav__item:hover {
+    background-color: #57585f;
+}
+
+.header-nav-sub {
+    display: none;
+    position: absolute;
+    background-color: #3E3F44;
+    min-width: 200px;
+}
+
+.header-nav-sub__link {
+    padding: 14px 18px;
+    color: white;
+    display: block;
+    width: 100%;
+    font-size: 13px;
+    line-height: 15px;
+}
+
+/* прячем выпадающее меню */
+
+.main {
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main>.container {
+    padding: 87px 0 50px 0;
+    display: flex;
+    max-width: 636px;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__title {
+    font-size: 34px;
+    font-weight: bold;
+    color: white;
+}
+
+.main__text {
+    font-size: 17px;
+    color: white;
+    line-height: 20px;
+    padding: 32px 0px 32px 0px
+}
+
+.main__btns {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main__btn {
+    padding: 22px;
+    display: block;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #3E3F44;
+    min-width: 270px;
+    border: 1px solid #4889EB;
+}
+
+.main__btn:hover {
+    background-color: #4889EB;
+}
+
+.middle>.container {
+    flex-direction: column;
+}
+
+/* НАчало 2 странцы каталога памятника  */
+
+.twopage-catalog>.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.twopage-container {
+    width: 100%;
+}
+
+h4 {
+    padding: 40px 0px 20px 0px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    color: #212121;
+    margin: 0px;
+}
+
+.twopage-column {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    /* Первый раз gridами  */
+}
+
+.line-foto {
+    position: relative;
+    justify-content: space-between;
+    display: flex;
+}
+
+.bottom-text {
+    position: absolute;
+    bottom: 1px;
+}
+
+.twopagebutton {
+    display: flex;
+    justify-content: center;
+}
+
+.switch {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0px 80px 0px;
+}
+
+.switch-link {
+    border: 1px solid #EDF0F2;
+    padding: 12px 16px;
+    display: block;
+    border-radius: 5px;
+    margin-right: 10px;
+    background: #EDF0F2;
+    color: black;
+}
+
+.switch-link:hover {
+    background-color: #3E3F44;
+}
+
+.switch-link--active {
+    background-color: #3E3F44;
+    color: white;
+    /* Что бы первая кнопка была нажата */
+}
+
+/* Конец Каталога памятников 2 страница  */
+
+/* начало фоток  */
+
+.middle-icon {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+
+
+
+.signature-foto {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    color: #45464B;
+}
+
+.middle-icon__items {
+    position: relative;
+    width: 150px;
+    text-align: center;
+    transition: all ease .2s;
+}
+
+.middle-icon__items span {
+    transition: all ease .2s;
+}
+
+.middle-icon__items:hover .img-wrap::after {
+    border-color: #4889EB;
+    color: #4889EB;
+}
+
+.middle-icon__items:hover .img-wrap::before {
+    opacity: .2;
+}
+
+.middle-icon__items:hover {
+    color: #4889EB;
+    transform: translateY(1px);
+}
+
+.img-wrap {
+    padding-top: 9px;
+    padding-right: 9px;
+    margin-bottom: 16px;
+    width: 150px;
+    height: 150px;
+    position: relative;
+}
+
+.img-foto {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+.img-wrap::after {
+    content: "";
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border: 1px solid #B1B1B1;
+    top: 0;
+    right: 0;
+    transition: all ease .3s;
+    /* Рамка около фотографий */
+}
+
+.img-wrap::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 9px;
+    bottom: 0;
+    top: 9px;
+    background-color: #4889EB;
+    z-index: 2;
+    opacity: 0;
+    transition: all ease .3s;
+}
+
+/* конец фоток */
+
+/* 2 блока начало */
+
+.middle-info {
+    display: flex;
+    width: 100%;
+    padding-bottom: 60px;
+}
+
+.middle-info__block {
+    display: block;
+    width: 50%;
+    padding: 90px 90px 0px 90px;
+}
+
+h2 {
+    font-size: 20px;
+    line-height: 23px;
+    font-weight: bold;
+    color: #212121;
+}
+
+.info__block-text {
+    font-size: 14px;
+    line-height: 16px;
+    color: #212121;
+}
+
+/* }2 блока конец  */
+
+/* Начало 3 Страницы */
+
+.threepage {
+    padding-bottom: 41px;
+}
+
+.threepage>.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.threepage-title {
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 30px;
+    color: #212121;
+    margin: 40px;
+}
+
+.threepage-leftblock {
+    height: auto;
+    width: auto;
+    max-width: 550px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.leftblock-logo {
+    position: absolute;
+}
+
+.retush-foto {
+    width: 50%;
+}
+
+.leftblock-text {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    color: #3E3F44;
+}
+
+.leftblock-margintop {
+    margin-top: 28px;
+}
+
+.leftblock-marginbotton {
+    margin-bottom: 0px;
+}
+
+.threepage-contact {
+    margin-top: 35px;
+}
+
+.threepage-rightblock {
+    width: 50%;
+    padding-left: 80px;
+}
+
+.threepage-h3 {
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+.leftblock-phone {
+    text-align: left;
+}
+
+.rightblock-text {
+    padding-bottom: 42px;
+}
+
+/* Конец 3 СТраницы */
+
+/* Start 4 page */
+
+.fourpage>.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.threepage-title {
+    margin: 0px;
+    padding: 35px 0px 26px 0px;
+}
+
+.fourpage-map {
+    width: 50%;
+}
+
+.tetra-map {
+    max-width: 439px;
+    margin-left: 70px;
+}
+
+.fourpage-text {
+    width: 50%;
+    padding: 28px 0px 0px 75px;
+}
+
+.fourpage-h3 {
+    width: 100%;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    color: #212121;
+    padding-top: 62px;
+}
+
+.fourmiddle-text {
+    padding: 15px 0px 54px 0px;
+    font-size: 14px;
+    line-height: 16px;
+    color: #666666;
+}
+
+.column-city {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+}
+
+.column-city-item {
+    max-width: 355px;
+    width: 100%
+}
+
+.city-item-heading {
+    font-weight: bold;
+    font-size: 44px;
+    line-height: 52px;
+    color: #CACACA;
+}
+
+.send-city {
+    padding: 12px 0px 14px 0px;
+    font-size: 15px;
+    line-height: 18px;
+    color: #212121;
+}
+
+.send-city-link {
+    border-bottom: 1px dashed #4889EB;
+    font-size: 15px;
+    line-height: 18px;
+    color: #4889EB;
+}
+
+.fourblock-link {
+    padding: 70px 0px 61px 0px;
+    width: 100%;
+    text-align: center;
+}
+
+.fourblock-btn {
+    margin: 70px 0 61px 0px;
+    padding: 15px 115px;
+    border-radius: 34px;
+    background-color: #3478DF;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* End 4 page */
+
+/* start 5 page */
+
+.fivepage>.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fivepage-title {
+    padding: 40px 0px;
+}
+
+.fivepage-map {
+    max-width: 649px;
+    max-height: 728px;
+    width: 50%;
+}
+
+.fivepage-rightblock {
+    width: 50%;
+    padding-left: 42px;
+}
+
+.fivepage-header {
+    padding-bottom: 25px;
+    line-height: 20px;
+    color: #212121;
+}
+
+.fivepage-item {
+    padding-bottom: 35px;
+}
+
+.fivepage-link {
+    color: #4889EB;
+}
+
+.delivery-method {
+    list-style-type: disc;
+    padding-bottom: 30px;
+}
+
+.delivery-method li {
+    list-style-type: disc;
+    line-height: 22px;
+}
+
+.fivepage-h3 {
+    padding: 30px 0 10px 0;
+}
+
+/* end 5 page */
+
+/* star 6 block */
+
+.sixpage>.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 59px;
+}
+
+.sixblock-header {
+    position: relative;
+    width: 100%;
+}
+
+.main-form {
+    max-width: 860px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.main-form input, textarea, select {
+    padding: 10px;
+    background: #FDFDFD;
+    border: 1px solid #E5E5E5;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.main-form input[type='data'] {
+    width: 120px;
+    margin-right: 10px;
+    position: relative;
+}
+
+.main-form input[type='data']:last-child {
+    margin-right: 0;
+}
+
+.main-form input[type="text"], .main-form input[type="email"], .main-form input[type="tel"], textarea {
+    max-width: 380px;
+    width: 100%;
+}
+
+.main-form__btn {
+    background: #F2F3F6;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+}
+
+.main-form__btn--mLeft {
+    margin-left: 10px;
+}
+
+textarea {
+    resize: none;
+}
+
+.main-form__btn--mBottom {
+    margin-top: 10px;
+}
+
+.main-form__wrap {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.main-form__wrap--flex {
+    display: flex;
+    align-items: center;
+    max-width: 380px;
+    width: 100%;
+}
+
+.main-form__left, .main-form__right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-form__small-block {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main-form__title {
+    display: block;
+    width: 100%;
+    margin: 24px 0 5px 0;
+}
+
+.main-form__title--info {
+    position: relative;
+}
+
+.g-btn--center {
+    margin: 0 auto;
+}
+
+.main-form__title--info:after {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -25px;
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-image: url(../img/svg/i.svg);
+    background-size: cover;
+    margin-right: auto;
+}
+
+.checkbox-style {
+    width: 22px;
+    height: 22px;
+    background: #FDFDFD;
+    border: 1px solid #D1D4D8;
+    box-sizing: border-box;
+    border-radius: 3px;
+    margin-right: 8px;
+}
+
+.small-block--checkbox {
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.main-form__right {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main-form__select {
+    width: 120px;
+    margin-right: 10px;
+}
+
+.main-form__select:last-child {
+    margin-right: 0px;
+}
+
+.main-form__capcha-wrap {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main-form__capcha-wrap input[type='text'] {
+    width: 120px;
+}
+
+/* end 6 block */
+
+/* начало нижнего блока */
+
+.section-bottom {
+    padding: 30px 0px 60px 0px;
+    background: #F7F9FB;
+}
+
+.section-bottom>.container {
+    flex-direction: column;
+    /* так как много у нас div с класом container так правильно обращаться к определённому  */
+}
+
+.section-bottom__title {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.section-bottom__block {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.bottom-block {
+    padding: 20px 90px;
+    width: 50%;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.section-bottom__title {
+    font-size: 30px;
+    line-height: 35px;
+}
+
+.heading {
+    font-size: 20px;
+    line-height: 23px;
+    font-weight: bold;
+}
+
+.heading-text {
+    font-size: 15px;
+    line-height: 18px;
+}
+
+/* Начало футера */
+
+.footer {
+    background-color: #2D2E32;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding-top: 14px;
+}
+
+.footer>.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-catalog-wrap {
+    padding: 30px;
+}
+
+.footer-title {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.footer-catalog-item {
+    font-size: 15px;
+    padding-top: 10px;
+}
+
+.footer-catalog {
+    padding-top: 10px;
+    color: white;
+}
+
+.footer-catalog-contact {
+    padding-top: 30px;
+}
+
+.footer-mail {
+    padding-top: 10px;
+}
+
+.skype {
+    transform: translate(0px, 6px);
+}
+
+.footer-contact__phone {
+    display: block;
+    color: white;
+}
+
+.catalog-item-link {
+    color: white;
+}
+
+.footer-contact__mail {
+    color: #4889EB;
+    padding-top: 10px;
+}
