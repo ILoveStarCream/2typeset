@@ -431,7 +431,7 @@ h4 {
     display: flex;
     justify-content: space-between;
     margin-top: 60px;
-    
+    overflow: auto;
     margin-left: 10px;
 }
 
@@ -1062,8 +1062,11 @@ textarea {
         align-items: center;
         background-color: #2D2E32;
     }
-    .logo {
+    .logotype {
         max-width: 52px;
+    }
+    .logo {
+        display: none;
     }
     .header-logo__decr {
         display: none;
@@ -1111,47 +1114,33 @@ textarea {
     .nav__input:checked~.container .header-nav {
         left: 0;
     }
-    /* Выезжающее меню крнец */
-    .main__title, .main__text {
-        display: none;
+    /* Выезжающее меню конец */
+    /* 2,block */
+    .twopage-catalog>.container {
+        text-align: center;
     }
-    .main__btns {
-        flex-direction: column;
-        max-width: 270px;
+    .Foto {
+        max-width: 162px;
     }
-    .main__btn {
-        margin-top: 30px;
-    }
-    .headerlogo-mobileversion {
-        display: block;
-    }
-    .header-logo__text {
-        color: white;
-    }
-    .main>.container {
-        padding: 60px 0 47px 0;
-    }
-    .middle-icon {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 20px;
-        overflow: auto;
+    .twopage-column {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
         margin-left: 10px;
     }
-    .middle-info {
-        flex-direction: column;
-        padding: 27px;
+    .switch-link {
+        border: 1px solid #EDF0F2;
+        padding: 8px 12px;
+        display: block;
+        border-radius: 5px;
+        margin-right: 8px;
+        background: #EDF0F2;
+        color: black;
     }
-    h2 {
-        padding-bottom: 16px;
-    }
-    .info__block-text {
-        padding-bottom: 36px;
-    }
-    .middle-info__block {
-        margin: 0 auto;
-        width: 100%;
-        padding: 0px;
+    .switch-link--active {
+        background-color: #3E3F44;
+        color: white;
     }
     /* footer у всех одинаковый  */
     .section-bottom__block {

@@ -124,10 +124,6 @@ a {
     white-space: nowrap;
 }
 
-.headerlogo-mobileversion {
-    display: none;
-}
-
 /* Свойство white-space устанавливает, как отображать пробелы между словами. */
 
 .header-logo__text {
@@ -176,30 +172,20 @@ a {
 
 /* Header bottom start */
 
-.hidden {
-    display: none;
-    /* Скрыть кнопку чекбокс */
-}
-
 .header-bottom {
-    position: relative;
-    /*для отсчета позиционирования меню*/
     background-color: #3E3F44;
+    width: 100%;
 }
 
 .header-nav {
-    margin: auto;
+    width: 100%;
     color: white;
-    transition: 0.5s ease-in-out;
-    /*делаем анимацию плавной*/
-    background-color: inherit;
 }
 
 .header-nav__list {
     display: flex;
     justify-content: center;
     width: 100%;
-    flex-wrap: wrap;
 }
 
 .header-nav__item {
@@ -264,34 +250,6 @@ a {
     width: 100%;
     font-size: 13px;
     line-height: 15px;
-}
-
-.nav__trigger {
-    display: none;
-    width: 24px;
-    height: 16px;
-    padding: 12px 0;
-    border-bottom: 3px solid #FFFFFF;
-    border-top: 3px solid #FFFFFF;
-    /*высота между бордером и центральной частью*/
-    background-color: #FFFFFF;
-    background-clip: content-box;
-    /*часть магии, которая влияет на высоту*/
-    font-size: 0;
-    z-index: 10;
-    cursor: pointer;
-    margin: 2px 14px 17px;
-}
-
-.nav__trigger:before, .nav__trigger:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    left: 0;
-    background-color: inherit;
-    top: 11px;
-    /*чтобы не переписывать по 100 раз*/
 }
 
 /* прячем выпадающее меню */
@@ -431,16 +389,9 @@ h4 {
     display: flex;
     justify-content: space-between;
     margin-top: 60px;
-    
-    margin-left: 10px;
 }
 
-.middle-icon:after {
-    content: "";
-    display: block;
-    width: 10px;
-    flex-shrink: 0;
-}
+
 
 .signature-foto {
     font-weight: 600;
@@ -535,7 +486,6 @@ h2 {
     line-height: 23px;
     font-weight: bold;
     color: #212121;
-    padding-bottom: 22px;
 }
 
 .info__block-text {
@@ -969,7 +919,6 @@ textarea {
     font-size: 20px;
     line-height: 23px;
     font-weight: bold;
-    padding: 23px 0px 16px 0px;
 }
 
 .heading-text {
@@ -996,10 +945,6 @@ textarea {
     padding: 30px;
 }
 
-.btn-mobileversion {
-    display: none;
-}
-
 .footer-title {
     font-size: 14px;
     line-height: 16px;
@@ -1015,10 +960,6 @@ textarea {
 .footer-catalog {
     padding-top: 10px;
     color: white;
-}
-
-.footer-mobileversion {
-    display: none;
 }
 
 .footer-catalog-contact {
@@ -1046,139 +987,4 @@ textarea {
     color: #4889EB;
     padding-top: 10px;
 }
-
 /* Ещё мобильная версия  */
-
-@media(max-width: 375px) {
-    /* Header с меню */
-    .g-btn {
-        display: none;
-    }
-    .header-top {
-        padding: 6px 14px 6px 63px;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #2D2E32;
-    }
-    .logo {
-        max-width: 52px;
-    }
-    .header-logo__decr {
-        display: none;
-    }
-    .header-contact__text {
-        font-size: 12px;
-        line-height: 14px;
-        color: #5E6065;
-    }
-    .header-contact__phone {
-        font-size: 22px;
-        line-height: 26px;
-        text-align: right;
-        color: #FFFFFF;
-    }
-    .nav__trigger {
-        position: absolute;
-        top: -53px;
-        display: block;
-    }
-    .header-nav {
-        position: absolute;
-        top: 100%;
-        left: -100%;
-        /*Прячем !влево!*/
-        z-index: 100;
-        background-color: #3e3f44;
-    }
-    .header-nav__list {
-        display: block;
-    }
-    .header-nav-sub {
-        display: block;
-        position: relative;
-        margin-left: 10px;
-        overflow: hidden;
-        max-height: 0;
-        /*прячем субменю*/
-        background-color: inherit;
-    }
-    .header-nav__item:hover .header-nav-sub {
-        max-height: 500px;
-        /*ООООООООЧЕНЬ спорное решение, но это пока единственный способ, не добавляя ничего в разметку.*/
-    }
-    .nav__input:checked~.container .header-nav {
-        left: 0;
-    }
-    /* Выезжающее меню крнец */
-    .main__title, .main__text {
-        display: none;
-    }
-    .main__btns {
-        flex-direction: column;
-        max-width: 270px;
-    }
-    .main__btn {
-        margin-top: 30px;
-    }
-    .headerlogo-mobileversion {
-        display: block;
-    }
-    .header-logo__text {
-        color: white;
-    }
-    .main>.container {
-        padding: 60px 0 47px 0;
-    }
-    .middle-icon {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 20px;
-        overflow: auto;
-        margin-left: 10px;
-    }
-    .middle-info {
-        flex-direction: column;
-        padding: 27px;
-    }
-    h2 {
-        padding-bottom: 16px;
-    }
-    .info__block-text {
-        padding-bottom: 36px;
-    }
-    .middle-info__block {
-        margin: 0 auto;
-        width: 100%;
-        padding: 0px;
-    }
-    /* footer у всех одинаковый  */
-    .section-bottom__block {
-        flex-direction: column;
-    }
-    .bottom-block {
-        width: 100%;
-        padding: 0px;
-        text-align: center;
-        padding: 25px;
-    }
-    .section-bottom__title {
-        font-weight: bold;
-        font-size: 26px;
-        line-height: 30px;
-    }
-    .heading {
-        padding: 17px 0px 14px 0px;
-    }
-    .btn-mobileversion {
-        display: block;
-        margin: 0 auto;
-    }
-    .footer>.container {
-        flex-direction: column;
-    }
-    .footer-mobileversion {
-        display: block;
-    }
-}
