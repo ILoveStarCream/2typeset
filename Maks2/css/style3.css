@@ -1184,8 +1184,8 @@ textarea {
     .leftblock-marginbotton {
         padding-top: 20px;
     }
-    .header-contact__mobileversion {
-        display: none;
+    .threepage-contact {
+        display: block;
     }
     */
     /* end 3 page */

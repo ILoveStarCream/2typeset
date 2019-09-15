@@ -124,6 +124,10 @@ a {
     white-space: nowrap;
 }
 
+.headerlogo-mobileversion {
+    display: none;
+}
+
 /* Свойство white-space устанавливает, как отображать пробелы между словами. */
 
 .header-logo__text {
@@ -136,14 +140,6 @@ a {
     color: #212121;
     font-size: 16px;
     font-weight: bold;
-}
-
-.header-logo__mobileversion {
-    display: none;
-}
-
-.main-text__mobileversion {
-    display: none;
 }
 
 .header-logo__text--bold {
@@ -180,20 +176,30 @@ a {
 
 /* Header bottom start */
 
+.hidden {
+    display: none;
+    /* Скрыть кнопку чекбокс */
+}
+
 .header-bottom {
+    position: relative;
+    /*для отсчета позиционирования меню*/
     background-color: #3E3F44;
-    width: 100%;
 }
 
 .header-nav {
-    width: 100%;
+    margin: auto;
     color: white;
+    transition: 0.5s ease-in-out;
+    /*делаем анимацию плавной*/
+    background-color: inherit;
 }
 
 .header-nav__list {
     display: flex;
     justify-content: center;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 .header-nav__item {
@@ -258,6 +264,34 @@ a {
     width: 100%;
     font-size: 13px;
     line-height: 15px;
+}
+
+.nav__trigger {
+    display: none;
+    width: 24px;
+    height: 16px;
+    padding: 12px 0;
+    border-bottom: 3px solid #FFFFFF;
+    border-top: 3px solid #FFFFFF;
+    /*высота между бордером и центральной частью*/
+    background-color: #FFFFFF;
+    background-clip: content-box;
+    /*часть магии, которая влияет на высоту*/
+    font-size: 0;
+    z-index: 10;
+    cursor: pointer;
+    margin: 2px 14px 17px;
+}
+
+.nav__trigger:before, .nav__trigger:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    left: 0;
+    background-color: inherit;
+    top: 11px;
+    /*чтобы не переписывать по 100 раз*/
 }
 
 /* прячем выпадающее меню */
@@ -397,6 +431,14 @@ h4 {
     display: flex;
     justify-content: space-between;
     margin-top: 60px;
+    margin-left: 10px;
+}
+
+.middle-icon:after {
+    content: "";
+    display: block;
+    width: 10px;
+    flex-shrink: 0;
 }
 
 .signature-foto {
@@ -492,6 +534,7 @@ h2 {
     line-height: 23px;
     font-weight: bold;
     color: #212121;
+    padding-bottom: 22px;
 }
 
 .info__block-text {
@@ -551,6 +594,11 @@ h2 {
 
 .leftblock-margintop {
     margin-top: 28px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+    color: #212121;
 }
 
 .leftblock-marginbotton {
@@ -605,6 +653,15 @@ h2 {
 .fourpage-text {
     width: 50%;
     padding: 28px 0px 0px 75px;
+}
+
+.leftblock-Payment {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    color: #3E3F44;
+    padding-top: 20px;
 }
 
 .fourpage-h3 {
@@ -921,14 +978,11 @@ textarea {
     line-height: 35px;
 }
 
-.g-btn__mobileversion {
-    display: none;
-}
-
 .heading {
     font-size: 20px;
     line-height: 23px;
     font-weight: bold;
+    padding: 23px 0px 16px 0px;
 }
 
 .heading-text {
@@ -955,6 +1009,10 @@ textarea {
     padding: 30px;
 }
 
+.btn-mobileversion {
+    display: none;
+}
+
 .footer-title {
     font-size: 14px;
     line-height: 16px;
@@ -972,7 +1030,7 @@ textarea {
     color: white;
 }
 
-.footer-title__mobileversion {
+.footer-mobileversion {
     display: none;
 }
 
@@ -1004,52 +1062,177 @@ textarea {
 
 /* Ещё мобильная версия  */
 
-@media (max-width:375px) {
-    .container {
-        width: 100%;
+@media(max-width: 375px) {
+    /* Header с меню */
+    .g-btn {
+        display: none;
     }
     .header-top {
+        padding: 6px 14px 6px 63px;
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         background-color: #2D2E32;
     }
-    .header-logo {
-        display: block;
-        width: 52px;
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        padding: 9px 33px;
+    .logo {
+        max-width: 52px;
     }
     .header-logo__decr {
         display: none;
     }
-    .g-btn {
+    .header-contact__text {
+        font-size: 12px;
+        line-height: 14px;
+        color: #5E6065;
+    }
+    .header-contact__phone {
+        font-size: 22px;
+        line-height: 26px;
+        text-align: right;
+        color: #FFFFFF;
+    }
+    .nav__trigger {
+        position: absolute;
+        top: -53px;
+        display: block;
+    }
+    .header-nav {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        /*Прячем !влево!*/
+        z-index: 100;
+        background-color: #3e3f44;
+    }
+    .header-nav__list {
+        display: block;
+    }
+    .header-nav-sub {
+        display: block;
+        position: relative;
+        margin-left: 10px;
+        overflow: hidden;
+        max-height: 0;
+        /*прячем субменю*/
+        background-color: inherit;
+    }
+    .header-nav__item:hover .header-nav-sub {
+        max-height: 500px;
+        /*ООООООООЧЕНЬ спорное решение, но это пока единственный способ, не добавляя ничего в разметку.*/
+    }
+    .nav__input:checked~.container .header-nav {
+        left: 0;
+    }
+    /* Выезжающее меню крнец */
+    .main__title, .main__text {
         display: none;
     }
     .main__btns {
-        width: 100%;
+        flex-direction: column;
+        max-width: 270px;
+    }
+    .main__btn {
+        margin-top: 30px;
+    }
+    .headerlogo-mobileversion {
+        display: block;
+    }
+    .header-logo__text {
+        color: white;
+    }
+    .main>.container {
+        padding: 60px 0 47px 0;
+    }
+    .middle-icon {
         display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        overflow: auto;
+        margin-left: 10px;
+    }
+    .middle-info {
+        flex-direction: column;
+        padding: 27px;
+    }
+    h2 {
+        padding-bottom: 16px;
+    }
+    .info__block-text {
+        padding-bottom: 36px;
+    }
+    .middle-info__block {
+        margin: 0 auto;
+        width: 100%;
+        padding: 0px;
+    }
+    /* start 4 page */
+    .fourpage>.container {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .tetra-map {
+        max-width: 327px;
+        margin-left: 0px;
+    }
+    .threepage-title {
+        padding-top: 0px;
+    }
+    .fourpage-text {
+        width: 100%;
+        padding: 0px
+    }
+    .fourmiddle-text {
+        padding: 20px 0px 0px 0px;
+    }
+    .fourpage-h3 {
+        width: 100%;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 23px;
+        color: #212121;
+        padding-top: 30px;
+    }
+    .column-city {
+        display: block;
+        width: 100%;
+    }
+    .city-item-heading {
+        padding-top: 20px;
+    }
+    .fourblock-link {
+        padding: 70px 0px 40px 0px;
+    }
+    .fourblock-btn {
+        padding: 15px 30px;
+    }
+    /* end 4 page */
+    /* footer у всех одинаковый  */
+    .section-bottom__block {
         flex-direction: column;
     }
-    /* Header у всех одинаковый  */
-    /* 4page  */
-    .fourpage>.container {
-        Flex-direction: column;
+    .bottom-block {
+        width: 100%;
+        padding: 0px;
+        text-align: center;
+        padding: 25px;
     }
-    /* 4 page */
-    /* Footer у всех одинаковый */
+    .section-bottom__title {
+        font-weight: bold;
+        font-size: 26px;
+        line-height: 30px;
+    }
+    .heading {
+        padding: 17px 0px 14px 0px;
+    }
+    .btn-mobileversion {
+        display: block;
+        margin: 0 auto;
+    }
     .footer>.container {
         flex-direction: column;
     }
-    .g-btn__mobileversion {
+    .footer-mobileversion {
         display: block;
-        width: 100%;
-        max-width: 271px;
-        margin: 0 auto;
-        text-align: center;
-        margin-bottom: 66px;
     }
 }
